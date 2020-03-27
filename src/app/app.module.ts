@@ -7,6 +7,7 @@ import { AuthorityComponent } from './authority/authority.component';
 import { BusinessComponent } from './business/business.component';
 import { HealthComponent } from './health/health.component';
 import { HomeComponent } from './home/home.component';
+import { HoodComponent } from './hood/hood.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { HomeComponent } from './home/home.component';
     AuthorityComponent,
     BusinessComponent,
     HealthComponent,
-    HomeComponent
+    HomeComponent,
+    HoodComponent
   ],
   imports: [
     BrowserModule,
