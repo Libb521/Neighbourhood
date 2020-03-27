@@ -10,6 +10,7 @@ import { HomeComponent } from './home/home.component';
 import { HoodComponent } from './hood/hood.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BlogsComponent } from './blogs/blogs.component';
+import { OutComponent } from './out/out.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BlogsComponent } from './blogs/blogs.component';
     HomeComponent,
     HoodComponent,
     NavbarComponent,
-    BlogsComponent
+    BlogsComponent,
+    OutComponent
   ],
   imports: [
     BrowserModule,
