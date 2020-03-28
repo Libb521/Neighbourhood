@@ -1,5 +1,8 @@
-import { Component, OnInit, Output, EventEmitter } from'@angular/core';
-import { Hood } from '../hood';
+import { Component, OnInit} from '@angular/core';
+import { environment } from './../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-hood-form',
@@ -7,17 +10,24 @@ import { Hood } from '../hood';
   styleUrls: ['./hood-form.component.css']
 })
 export class HoodFormComponent implements OnInit {
-  newHood = new Hood('','','',0,0);
-  @Output() addHood = new EventEmitter<Hood>();
+  form: FormGroup;
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+    this.form = this.fb.group({
+      neighbourhood_name: [''],
+      neighbourhood_location: [''],
+      occupants: ['']
+    });
+  }
 
-    submitHood(){
-  this.addHood.emit(this.newHood);
-  this.newHood = new Hood('','','',0,0);
+hoodForm() {// tslint:disable-next-line: max-line-length
+  this.http.post<{token: string}>(environment.baseUrl + 'api/v1/create_hood', this.form.value , {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe(
 
-    }
-  
-  constructor() { }
-
+    (response) => console.log(response),
+    (error) => alert('Something went wrong')
+  );
+  this.router.navigate(['']);
+  alert('Created Hood successfully');
+  }
   ngOnInit() {
   }
 

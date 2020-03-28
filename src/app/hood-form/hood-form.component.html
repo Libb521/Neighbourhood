@@ -1,49 +1,29 @@
 ﻿﻿<div class="hood-form">
     <div class="container" >
-    <div class="panel panel-primary" style="background-color:white;opacity:0.5;margin-left:200px;margin-top:30px;margin-bottom-30px;width:700px;height:auto;padding:30px;">
+    <div class="panel panel-primary" style="background-color:white;margin-left:200px;margin-top:30px;margin-bottom:30px;width:700px;height:auto;padding:30px;">
         <div>
                 <h3 class="panel-title">CREATE HOOD</h3>
         </div>
-    <div class="panel-body" style="color:black;">
-        <form (addHood)="addNewHood($event)" #hoodForm='ngForm' (ngSubmit)='submitHood()' name="form" role="form">
+    <div class="panel-body" style="color:white;">
+        <form [formGroup]="form" (ngSubmit)="hoodForm()">
+
+
             <div class="form-group">
-                <label for="firstName">Enter Admin your name</label>
-                <input autocomplete="off" type="text" [(ngModel)]="newHood.admin" name="admin"  id="Admin" class="form-control" #name='ngModel' placeholder="Admin" required />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    <p>Admin name is required</p>
-                </div>
+                <label for="firstName">Neighbourhood Name</label>
+                <input  type="text"  formControlName="neighbourhood_name" id="Name" class="form-control" placeholder="Neighbourhood Name" maxlength="50"  ng-minlength="3" required />
             </div>
             <div class="form-group">
-                <label for="firstName">Enter your name</label>
-                <input autocomplete="off" type="text" [(ngModel)]="newHood.name" name="name"  id="Name" class="form-control" #name='ngModel' placeholder="name" maxlength="50"  ng-minlength="3" required />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    <p>Name is required</p>    
-                </div> 
+                <label for="location"> Neighbourhood Location</label>
+                <input autocomplete="off" type="text"  formControlName="neighbourhood_location" id="location" placeholder="Neighbourhood Location" class="form-control"  required />
+
             </div>
             <div class="form-group">
-                <label for="location">Hood Location</label>
-                <input autocomplete="off" type="text" [(ngModel)]="newHood.location" name="location"  id="location" class="form-control" #name='ngModel' required />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    <p>location is required</p>    
-                </div>            
+                <label for="location">Neighbourhood Occupants</label>
+                <input  type="number"  formControlName="occupants"  id="occupants" class="form-control" placeholder="Occupants"  required />
             </div>
             <div class="form-group">
-                <label for="location">Hood Occupants</label>
-                <input autocomplete="off" type="text" [(ngModel)]="newHood.occupants" name="occupants"  id="occupants" class="form-control" #name='ngModel' required />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    <p>Number of occupants is required</p>    
-                </div>        
-            </div>
-            <div class="form-group">
-                <label for="mobile">Contact</label>
-                <input autocomplete="off" type="text" [(ngModel)]="newHood.contacts" name="contacts"  id="contacts" class="form-control" #name='ngModel' required />
-                <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
-                    <p>contact is required</p>    
-                </div>              
-            </div>            
-            <div class="form-actions">
-                <a href="hood" style="margin-left:280px;" class="text-center btn btn-outline-primary">SUBMIT</a>
-            </div>
+              <button class="btn btn-danger btn-block btn-lg">Create a Hood</button>
+          </div>
         </form>
     </div>
     </div>
