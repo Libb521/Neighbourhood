@@ -21,7 +21,13 @@ export class RegisterComponent implements OnInit {
     this.http = http;
 
    }
-
+submitForm() {
+this.http.post(environment.baseUrl + 'api/user', this.form.value).subscribe(
+    (response) => console.log(response),
+    () => console.log(this.form)
+  );
+this.router.navigate(['']);
+}
   ngOnInit() {
   }
 

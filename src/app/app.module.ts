@@ -22,7 +22,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {HoodFormComponent} from './hood-form/hood-form.component';
 import { BussinessFormComponent } from './bussiness-form/bussiness-form.component';
-import { BlogFormComponent } from './blog-form/blog-form.component'
+import { BlogFormComponent } from './blog-form/blog-form.component';
 @NgModule({
   declarations: [
     AppComponent,
