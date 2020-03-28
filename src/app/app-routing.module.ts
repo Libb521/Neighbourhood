@@ -13,6 +13,7 @@ import {RegisterComponent} from './register/register.component';
 import {BussinessFormComponent} from './bussiness-form/bussiness-form.component';
 import { LoginComponent } from './login/login.component';
 import { HoodDetailsComponent } from './hood-details/hood-details.component';
+import { CreateProfileComponent } from './create-profile/create-profile.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -27,7 +28,8 @@ const routes: Routes = [
   {path: 'hood-form', component: HoodFormComponent},
   {path: 'new-bussiness', component: BussinessFormComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'hood/:id', component: HoodDetailsComponent}
+  {path: 'hood/:id', component: HoodDetailsComponent},
+  {path: 'join/:id', component: CreateProfileComponent}
 ];
 
 @NgModule({

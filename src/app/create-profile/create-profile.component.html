@@ -1,0 +1,28 @@
+<div class="hood-form">
+  <div class="container" >
+  <div class="panel panel-primary" style="background-color:white;margin-left:200px;margin-top:30px;margin-bottom:30px;width:700px;height:auto;padding:30px;">
+      <div>
+              <h3 class="panel-title">CREATE PROFILE</h3>
+      </div>
+  <div class="panel-body" style="color:white;">
+      <form [formGroup]="form" (ngSubmit)="profileForm()">
+
+
+          <div class="form-group">
+              <label for="firstName">Bio</label>
+              <textarea formControlName="bio" id="" placeholder="Your Post"cols="30" rows="10"  required></textarea>
+          </div>
+
+          <div class="form-group">
+            <input type="text" formControlName="general_location" placeholder="General Location" required >
+          </div>
+
+          <div class="form-group">
+            <button class="btn btn-success btn-block btn-lg">Create Profile</button>
+        </div>
+      </form>
+  </div>
+  </div>
+  </div>
+</div>
+
