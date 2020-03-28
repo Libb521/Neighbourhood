@@ -17,6 +17,7 @@ import { HoodComponent } from './hood/hood.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { OutComponent } from './out/out.component';
+import { RegisterComponent } from './register/register.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { OutComponent } from './out/out.component';
     HoodComponent,
     NavbarComponent,
     BlogsComponent,
-    OutComponent
+    OutComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
