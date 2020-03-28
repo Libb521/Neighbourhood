@@ -23,6 +23,7 @@ import {HttpClientModule} from '@angular/common/http';
 import {HoodFormComponent} from './hood-form/hood-form.component';
 import { BussinessFormComponent } from './bussiness-form/bussiness-form.component';
 import { BlogFormComponent } from './blog-form/blog-form.component';
+import { LoginComponent } from './login/login.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,6 +39,7 @@ import { BlogFormComponent } from './blog-form/blog-form.component';
     HoodFormComponent,
     BussinessFormComponent,
     BlogFormComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

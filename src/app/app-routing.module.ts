@@ -11,6 +11,7 @@ import { OutComponent } from './out/out.component';
 import { HomeComponent } from './home/home.component';
 import {RegisterComponent} from './register/register.component';
 import {BussinessFormComponent} from './bussiness-form/bussiness-form.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'log-out', component: OutComponent },
   {path: 'hood-form', component: HoodFormComponent},
   {path: 'new-bussiness', component: BussinessFormComponent},
+  {path: 'login', component: LoginComponent}
 ];
 
 @NgModule({
