@@ -18,7 +18,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { OutComponent } from './out/out.component';
 import { RegisterComponent } from './register/register.component';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 @NgModule({
   declarations: [
     AppComponent,
@@ -42,7 +43,10 @@ import { RegisterComponent } from './register/register.component';
     MatCheckboxModule,
     MatToolbarModule,
     MatIconModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -7,6 +7,7 @@ import { HealthComponent } from './health/health.component';
 import { BlogsComponent } from './blogs/blogs.component';
 import { OutComponent } from './out/out.component';
 import { HomeComponent } from './home/home.component';
+import {RegisterComponent} from './register/register.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -15,6 +16,7 @@ const routes: Routes = [
   { path: 'business', component: BusinessComponent },
   { path: 'health', component: HealthComponent },
   { path: 'blogs', component: BlogsComponent },
+  {path: 'register', component: RegisterComponent},
   { path: 'log-out', component: OutComponent }
 ];
 
