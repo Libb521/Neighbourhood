@@ -1,5 +1,9 @@
-import { Component, OnInit ,Output,EventEmitter} from '@angular/core';
-import {Blog} from '../blog'
+import { Component, OnInit , Output, EventEmitter} from '@angular/core';
+import { environment } from './../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+
 
 @Component({
   selector: 'app-blog-form',
@@ -7,16 +11,23 @@ import {Blog} from '../blog'
   styleUrls: ['./blog-form.component.css']
 })
 export class BlogFormComponent implements OnInit {
-  newBlog = new Blog('','', new Date());
+  form: FormGroup;
 
-  @Output() addBlog= new EventEmitter<Blog>();
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router) {
+    this.form = this.fb.group({
+      post: [''],
+    });
+   }
+postForm() {
+// tslint:disable-next-line: max-line-length
+this.http.post<{token: string}>(`${environment.baseUrl}api/v1/post`, this.form.value , {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe(
 
-  submitForm(){
-    this.addBlog.emit(this.newBlog);
-    this.newBlog = new Blog('','', new Date());
-  }
-
-  constructor() { }
+    (response) => console.log(response),
+    (error) => alert('Something went wrong')
+  );
+this.router.navigate(['']);
+alert('Created Post successfully');
+}
 
   ngOnInit() {
   }

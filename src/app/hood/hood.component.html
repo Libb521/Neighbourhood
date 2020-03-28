@@ -1,17 +1,15 @@
 <div class="container">
-    <h1 style="text-align: center; color: white;"> HOODS</h1>
-    <!-- <hr>
-    <ul>
-      <li *ngFor='let hood of hoods; let i = index;'>
-        {{hood.name}}
-      </li>
-    </ul>
-    <div class="card" style="width: 18rem;">
-      <div class="card-body">
-        <h5 class="card-title">{{hood.name}}</h5>
-        <h6 class="card-subtitle mb-2 text-muted">{{hood.location}}</h6>
-        <h6 class="card-subtitle mb-2 text-muted">{{hood.occupants}}</h6>
-        <a href="#" class="card-link">{{hood.contact}}</a>
+
+    <hr>
+    <div class="row" *ngFor="let hood of data">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{hood.neighbourhood_name}}</h5>
+          <p class="card-text">{{hood.neighbourhood_location}}</p>
+          <p class="card-text">{{hood.occupants}}</p>
+          <a href="/hood/{{hood.id}}" class="btn btn-primary">View Details</a> <br>
+          <a href="/join/{{hood.id}}" class="btn btn-success">Join</a>
+        </div>
       </div>
-    </div> -->
+  </div>
   </div>
