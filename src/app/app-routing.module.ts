@@ -22,7 +22,7 @@ const routes: Routes = [
   { path: 'authority', component: AuthorityComponent },
   { path: 'view-business/:id', component: BusinessComponent },
   { path: 'view-dept/:id', component: HealthComponent },
-  { path: 'blogs', component: BlogsComponent },
+  { path: 'posts', component: BlogsComponent },
   { path: 'new-blog', component: BlogFormComponent },
   {path: 'register', component: RegisterComponent},
   { path: 'log-out', component: OutComponent },

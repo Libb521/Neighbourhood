@@ -22,11 +22,16 @@ export class LoginComponent implements OnInit {
    loginForm() {
     this.http.post(environment.baseUrl + 'api/token/', this.form.value).subscribe(
         // tslint:disable-next-line: no-string-literal
-        (response) => localStorage.setItem('token', response['access']),
-        (error) => alert('Wrong username or password')
+        (response) => {localStorage.setItem('token', response['access']);
+                       alert('You have successfully logged in');
+                       this.router.navigate(['/home']);
+      },
+        (error) => { alert('Wrong username or password');
+                     this.router.navigate(['']);
+                     this.form.reset();
+      }
       );
-    alert('You have successfully logged in');
-    this.router.navigate(['/home']);
+
     }
   ngOnInit() {
   }
