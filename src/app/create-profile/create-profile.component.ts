@@ -26,7 +26,7 @@ profileForm() {
     this.http.post<{token: string}>(environment.baseUrl + 'api/v1/view_hood/' + id, this.form.value, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((res) => {
 
       console.log(res);
-      this.router.navigate(['']);
+      this.router.navigate(['/home']);
       alert('Profile successfully created');
     },
     (error: any) => {
