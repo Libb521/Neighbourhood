@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 @Component({
   selector: 'app-business',
   templateUrl: './business.component.html',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class BusinessComponent implements OnInit {
 data: any;
-  constructor(private http: HttpClient, private route: ActivatedRoute) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -18,7 +19,13 @@ data: any;
       this.http.get<{token: string}>(environment.baseUrl + 'api/v1/create_business/' + id, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((res) => {
         this.data = res;
         console.log(this.data);
-      });
+      },
+      (error: any) => {
+        console.log(error);
+        alert('Not Authorized.Login');
+        this.router.navigate(['']);
+      }
+      );
     });
 
   }

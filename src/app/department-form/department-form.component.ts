@@ -29,11 +29,14 @@ form: FormGroup;
         this.router.navigate(['']);
         alert('Department successfully created');
         // tslint:disable-next-line: no-unused-expression
-        (error: any) => {
-          console.log(error);
-          alert('Something went wrong');
-        };
-      });
+
+      },
+      (error: any) => {
+        console.log(error);
+        alert('Not Authorized.Login');
+        this.router.navigate(['']);
+      }
+      );
 
     });
   }

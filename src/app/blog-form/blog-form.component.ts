@@ -22,11 +22,17 @@ postForm() {
 // tslint:disable-next-line: max-line-length
 this.http.post<{token: string}>(`${environment.baseUrl}api/v1/post`, this.form.value , {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe(
 
-    (response) => console.log(response),
-    (error) => alert('Something went wrong')
+    (response) => {console.log(response);
+                   this.router.navigate(['']);
+                   alert('Created Post successfully');
+    },
+    (error: any) => {
+      console.log(error);
+      alert('Not Authorized.Login');
+      this.router.navigate(['']);
+    }
   );
-this.router.navigate(['']);
-alert('Created Post successfully');
+
 }
 
   ngOnInit() {

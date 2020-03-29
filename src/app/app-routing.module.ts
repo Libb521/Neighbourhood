@@ -17,7 +17,7 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
 import { DepartmentFormComponent } from './department-form/department-form.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
+  { path: '', component: LoginComponent },
   { path: 'hood', component: HoodComponent },
   { path: 'authority', component: AuthorityComponent },
   { path: 'view-business/:id', component: BusinessComponent },
@@ -28,7 +28,7 @@ const routes: Routes = [
   { path: 'log-out', component: OutComponent },
   {path: 'hood-form', component: HoodFormComponent},
   {path: 'new-bussiness', component: BussinessFormComponent},
-  {path: 'login', component: LoginComponent},
+  {path: 'home', component: HomeComponent},
   {path: 'hood/:id', component: HoodDetailsComponent},
   {path: 'join/:id', component: CreateProfileComponent},
   {path: 'create-business/:id', component: BussinessFormComponent},

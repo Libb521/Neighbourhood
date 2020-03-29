@@ -26,7 +26,7 @@ export class LoginComponent implements OnInit {
         (error) => alert('Wrong username or password')
       );
     alert('You have successfully logged in');
-    this.router.navigate(['']);
+    this.router.navigate(['/home']);
     }
   ngOnInit() {
   }

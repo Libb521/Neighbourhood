@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient } from '@angular/common/http';
 import { ActivatedRoute } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-hood-details',
@@ -11,7 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class HoodDetailsComponent implements OnInit {
 id: any;
 hood;
-  constructor(private http: HttpClient, private route: ActivatedRoute, ) { }
+  constructor(private http: HttpClient, private route: ActivatedRoute, private router: Router ) { }
 
   ngOnInit() {
     this.route.params.subscribe(params => {
@@ -20,7 +21,13 @@ hood;
       this.http.get<{token: string}>(environment.baseUrl + 'api/v1/view_hood/' + id, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((res) => {
         this.hood = res;
         console.log(this.hood);
-      });
+      },
+      (error: any) => {
+        console.log(error);
+        alert('Not Authorized.Login');
+        this.router.navigate(['']);
+      }
+      );
 
     });
   }

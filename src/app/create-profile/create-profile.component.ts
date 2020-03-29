@@ -28,7 +28,13 @@ profileForm() {
       console.log(res);
       this.router.navigate(['']);
       alert('Profile successfully created');
-    });
+    },
+    (error: any) => {
+      console.log(error);
+      alert('Not Authorized.Login');
+      this.router.navigate(['']);
+    }
+    );
 
   });
 }

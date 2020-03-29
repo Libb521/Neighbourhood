@@ -29,7 +29,13 @@ export class BussinessFormComponent implements OnInit {
         console.log(res);
         this.router.navigate(['']);
         alert('Business successfully created');
-      });
+      },
+      (error: any) => {
+        console.log(error);
+        alert('Not Authorized.Login');
+        this.router.navigate(['']);
+      }
+      );
 
     });
   }
