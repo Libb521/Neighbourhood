@@ -29,7 +29,8 @@ const routes: Routes = [
   {path: 'new-bussiness', component: BussinessFormComponent},
   {path: 'login', component: LoginComponent},
   {path: 'hood/:id', component: HoodDetailsComponent},
-  {path: 'join/:id', component: CreateProfileComponent}
+  {path: 'join/:id', component: CreateProfileComponent},
+  {path: 'create-business/:id', component: BussinessFormComponent}
 ];
 
 @NgModule({

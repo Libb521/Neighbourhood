@@ -1,5 +1,9 @@
-import { Component, OnInit, Output,EventEmitter } from '@angular/core';
-import {Bussiness} from '../bussiness';
+import { Component, OnInit} from '@angular/core';
+import { environment } from './../../environments/environment';
+import {HttpClient} from '@angular/common/http';
+import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-bussiness-form',
@@ -7,16 +11,28 @@ import {Bussiness} from '../bussiness';
   styleUrls: ['./bussiness-form.component.css']
 })
 export class BussinessFormComponent implements OnInit {
-  newBussiness = new Bussiness('','', '');
+  form: FormGroup;
 
-  @Output() addBussiness = new EventEmitter<Bussiness>();
+  constructor(private fb: FormBuilder, private http: HttpClient, private router: Router, private route: ActivatedRoute) {
+    this.form = this.fb.group({
+      business_name: [''],
+      business_email: [''],
+    });
+   }
 
-  submitForm(){
-    this.addBussiness.emit(this.newBussiness);
-    this.newBussiness = new Bussiness('','', '');
+   businessForm() {
+    this.route.params.subscribe(params => {
+      const id = params.id;
+      // tslint:disable-next-line: max-line-length
+      this.http.post<{token: string}>(environment.baseUrl + 'api/v1/create_business/' + id, this.form.value, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((res) => {
+
+        console.log(res);
+        this.router.navigate(['']);
+        alert('Business successfully created');
+      });
+
+    });
   }
-
-  constructor() { }
 
   ngOnInit() {
   }

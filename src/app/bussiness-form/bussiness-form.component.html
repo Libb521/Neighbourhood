@@ -1,24 +1,26 @@
-<form (ngSubmit)='submitForm()' style="background-color:white;opacity:0.5;margin-left:200px;margin-top:30px;margin-bottom-30px;width:700px;height:auto;padding:30px;">
-    <div class="forms" style="color:black;">
-        <div class="form-group">
-            <label for="name">NAME</label>
-            <input type="text" name="name" [(ngModel)]="newBussiness.name" class="form-control"
-                placeholder="Enter Name" required>
-               
-        </div>
-        <div class="form-group">
-            <label for="contact">Contact</label>
-            <input type="text" name="contact" [(ngModel)]="newBussiness.Contact" class="form-control"
-                placeholder="Enter Contact" required>
-                
-        </div>
 
-        <div class="form-group">
-            <label for="Hood">Hood</label>
-            <input type="text" class="form-control" name="hood" id="hood" placeholder="Hood" [(ngModel)]="newBussiness.Hood" name="hood" #hood="ngModel" required>
-        </div>
-    </div>
-    <button class="btn btn-outline-primary" id="submit" type="submit" name="button"> <i
-            class="fa fa-telegram"></i> Add Bussiness</button>
+  <div class="container">
+  <div class="panel panel-primary" style="background-color:white;margin-left:200px;margin-top:30px;margin-bottom:30px;width:700px;height:auto;padding:30px;">
+      <div>
+              <h3 class="panel-title">CREATE HOOD</h3>
+      </div>
+  <div class="panel-body" style="color:white;">
+      <form [formGroup]="form" (ngSubmit)="businessForm()">
 
-</form>
+
+          <div class="form-group">
+              <label for="firstName">Business Name</label>
+              <input  type="text"  formControlName="business_name" id="Name" class="form-control" placeholder="Business Name" maxlength="50"  ng-minlength="3" required />
+          </div>
+          <div class="form-group">
+              <label for="location">Business Email</label>
+              <input  type="text"  formControlName="business_email" id="location" placeholder="Business Email" class="form-control"  required />
+
+          </div>
+          <div class="form-group">
+            <button class="btn btn-danger btn-block btn-lg">Create Business</button>
+        </div>
+      </form>
+  </div>
+  </div>
+  </div>
