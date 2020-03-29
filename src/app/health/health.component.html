@@ -1,6 +1,18 @@
 <div class="container">
-    <h1 style="text-align: center;  color: white;">HEALTH CENTERS</h1>
+    <h1 style="text-align: center;  color: white;">DEPARTMENTS</h1>
     <hr>
+    <div class="row" *ngFor="let dept of data">
+      <div class="card" style="width: 20rem;">
+        <div class="card-body">
+          <h5 class="card-title">Name:{{dept.dept_name}}</h5>
+          <p class="card-text">Contact Number:{{dept.contact_number}}</p>
+          <p class="card-text">Department type:{{dept.dept_type}}</p>
+        </div>
+      </div>
 
-</div>
+    </div>
+      <br>
+      <br>
+  </div>
+
 

@@ -21,7 +21,7 @@ const routes: Routes = [
   { path: 'hood', component: HoodComponent },
   { path: 'authority', component: AuthorityComponent },
   { path: 'view-business/:id', component: BusinessComponent },
-  { path: 'health', component: HealthComponent },
+  { path: 'view-dept/:id', component: HealthComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'new-blog', component: BlogFormComponent },
   {path: 'register', component: RegisterComponent},
