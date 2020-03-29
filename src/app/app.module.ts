@@ -26,6 +26,7 @@ import { BlogFormComponent } from './blog-form/blog-form.component';
 import { LoginComponent } from './login/login.component';
 import { HoodDetailsComponent } from './hood-details/hood-details.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { DepartmentFormComponent } from './department-form/department-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { CreateProfileComponent } from './create-profile/create-profile.componen
     LoginComponent,
     HoodDetailsComponent,
     CreateProfileComponent,
+    DepartmentFormComponent,
   ],
   imports: [
     BrowserModule,

@@ -14,6 +14,7 @@ import {BussinessFormComponent} from './bussiness-form/bussiness-form.component'
 import { LoginComponent } from './login/login.component';
 import { HoodDetailsComponent } from './hood-details/hood-details.component';
 import { CreateProfileComponent } from './create-profile/create-profile.component';
+import { DepartmentFormComponent } from './department-form/department-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,7 +31,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'hood/:id', component: HoodDetailsComponent},
   {path: 'join/:id', component: CreateProfileComponent},
-  {path: 'create-business/:id', component: BussinessFormComponent}
+  {path: 'create-business/:id', component: BussinessFormComponent},
+  {path: 'create-dept/:id', component: DepartmentFormComponent}
 ];
 
 @NgModule({
