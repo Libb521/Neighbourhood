@@ -27,7 +27,7 @@ export class BussinessFormComponent implements OnInit {
       this.http.post<{token: string}>(environment.baseUrl + 'api/v1/create_business/' + id, this.form.value, {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe((res) => {
 
         console.log(res);
-        this.router.navigate(['']);
+        this.router.navigate(['/home']);
         alert('Business successfully created');
       },
       (error: any) => {

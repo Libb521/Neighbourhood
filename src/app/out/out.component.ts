@@ -12,7 +12,7 @@ export class OutComponent implements OnInit {
 
   ngOnInit() {
     localStorage.removeItem('token');
-    this.router.navigate(['/login']);
+    this.router.navigate(['']);
 
   }
 

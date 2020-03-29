@@ -26,7 +26,7 @@ this.http.post(environment.baseUrl + 'api/user', this.form.value).subscribe(
     (response) => console.log(response),
     () => console.log(this.form)
   );
-this.router.navigate(['/login']);
+this.router.navigate(['']);
 }
   ngOnInit() {
   }

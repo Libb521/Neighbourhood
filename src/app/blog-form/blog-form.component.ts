@@ -23,7 +23,7 @@ postForm() {
 this.http.post<{token: string}>(`${environment.baseUrl}api/v1/post`, this.form.value , {headers: {Authorization: `Bearer ${localStorage.getItem('token')}`}}).subscribe(
 
     (response) => {console.log(response);
-                   this.router.navigate(['']);
+                   this.router.navigate(['/home']);
                    alert('Created Post successfully');
     },
     (error: any) => {
