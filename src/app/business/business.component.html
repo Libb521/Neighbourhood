@@ -1,7 +1,18 @@
 <div class="container">
     <h1 style="text-align: center;  color: white;">BUSINESS PREMISES</h1>
     <hr>
-    <app-bussiness-form></app-bussiness-form>
+    <br>
+    <br>
+    <div class="row" *ngFor="let business of data">
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{business.business_name}}</h5>
+          <p class="card-text">{{business.business_email}}</p>
+        </div>
+      </div>
+      <br>
+      <br>
+  </div>
 
 </div>
 

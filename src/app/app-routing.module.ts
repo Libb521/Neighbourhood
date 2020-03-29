@@ -19,7 +19,7 @@ const routes: Routes = [
   { path: '', component: HomeComponent },
   { path: 'hood', component: HoodComponent },
   { path: 'authority', component: AuthorityComponent },
-  { path: 'business', component: BusinessComponent },
+  { path: 'view-business/:id', component: BusinessComponent },
   { path: 'health', component: HealthComponent },
   { path: 'blogs', component: BlogsComponent },
   { path: 'new-blog', component: BlogFormComponent },
